@@ -16,6 +16,9 @@
 #include <ctype.h>
 #include <string.h>
 #include <errno.h>
+#ifdef _WIN32
+#include <direct.h> // For _mkdir
+#endif
 #include <mobi.h>
 #include "common.h"
 

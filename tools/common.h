@@ -48,7 +48,6 @@
 #define FULLNAME_MAX 1024
 
 extern const char separator;
-const char * libmobi_msg(const MOBI_RET ret);
 int mt_mkdir(const char *filename);
 void split_fullpath(const char *fullpath, char *dirname, char *basename);
 bool dir_exists(const char *path);

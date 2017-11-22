@@ -2770,6 +2770,39 @@ uint32_t mobi_get_exthsize(const MOBIData *m) {
 }
 
 /**
+ @brief Get entry start offset for the orth entry
+
+ @param[in] m MOBIIndexEntry structure
+ @return Start offset, zero on failure
+*/
+uint32_t mobi_get_orth_entry_start_offset(const MOBIIndexEntry* m) {
+    uint32_t entry_startpos;
+    MOBI_RET ret = mobi_get_indxentry_tagvalue(&entry_startpos, m,
+                                               INDX_TAG_ORTH_STARTPOS);
+    if (ret != MOBI_SUCCESS)
+        return 0;
+
+    return entry_startpos;
+}
+
+/**
+ @brief Get text length for the orth entry
+
+ @param[in] MOBIIndexEntry structure
+ @return Text length
+*/
+uint32_t mobi_get_orth_entry_text_length(const MOBIIndexEntry* m) {
+    uint32_t entry_textlen;
+    MOBI_RET ret = mobi_get_indxentry_tagvalue(&entry_textlen, m,
+                                               INDX_TAG_ORTH_ENDPOS);
+
+    if (ret != MOBI_SUCCESS)
+        return 0;
+
+    return entry_textlen;
+}
+
+/**
  @brief Get count of palm database records
  
  @param[in] m MOBIData structure

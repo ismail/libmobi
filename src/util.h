@@ -138,7 +138,6 @@ int mobi_bitcount(const uint8_t byte);
 MOBI_RET mobi_delete_record_by_seqnumber(MOBIData *m, const size_t num);
 MOBI_RET mobi_swap_mobidata(MOBIData *m);
 char * mobi_strdup(const char *s);
-bool mobi_is_cp1252(const MOBIData *m);
 MOBI_RET mobi_cp1252_to_utf8(char *output, const char *input, size_t *outsize, const size_t insize);
 MOBI_RET mobi_utf8_to_cp1252(char *output, const char *input, size_t *outsize, const size_t insize);
 uint8_t mobi_ligature_to_cp1252(const uint8_t c1, const uint8_t c2);
